@@ -14,30 +14,75 @@
 </head>
 <body>
     <!--Main page wrapper-->
-    <div class="pageWrapper">
+    <div class="container-fluid pageWrapper">
+        
             <!--Navigation Bar with responsive container and icons-->
-            <div class="row navBar g-0 justify-content-center align-items-center text-center shadow"> 
-                <div class="col-2"><img src="images/QuotStation-Logo.jpg" alt="QuotStation Logo"></div>
-                <div class="col-5">
+            <div class="row navBar gap-0 justify-content-center align-items-center text-center shadow"> 
+                <div class="col-2 logo"><a href="index.html"><img src="images/QuotStation-Logo.jpg" alt="QuotStation Logo"></a></div>
+                <div class="col-5 navItems">
                     <div class="dropdown">
-                        <div class="navTabs" id="whybtn">Why QuotStation?<i class="bi bi-caret-down-fill"></i></div>
+                        <div class="navTabs" id="whybtn">Why QuotStation?<i class="bi bi-caret-down-fill" id="ia"></i></div>
                         <div class="dropdown-content" id="why">
-                            <div class="row">test</div>
-                            <div class="row">test</div>
-                            <div class="row">test</div>
+                            <div class="row gap-4">
+                                <div class="col-2">WHY US<hr/></div>
+                                <div class="col-6">FEATURES<hr/></div>
+                                <div class="col-2">PLANS<hr/></div>
+                                <div class="col-2 content"><strong>Overview</strong><br/>Easy to use, efficient to use and empowering to use</div>
+                                <div class="col-3 content"><strong>Open Market</strong><br/>sadasd</div>
+                                <div class="col-3 content"><strong>Open Market</strong><br/>sadasd</div>
+                                <div class="col-2 content"><strong>Buyer Account</strong><br/>sadasd</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="navTabs" id="getbtn">Getting Quotes<i class="bi bi-caret-down-fill"></i></div>
-                    <div class="navTabs" id="givebtn">Giving Quotes<i class="bi bi-caret-down-fill"></i></div>
-                    <div class="navTabs" id="signbtn">Sign Up</div>
-                    <div class="navTabs" id="aboutbtn">About Us</div>
+                    <div class="dropdown">
+                        <div class="navTabs" id="getbtn">I Need Quotes<i class="bi bi-caret-down-fill" id="ib"></i></div>
+                        <div class="dropdown-content" id="getting">
+                            <div class="row">test2</div>
+                            <div class="row">test2</div>
+                            <div class="row">test2</div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <div class="navTabs" id="givebtn">I Give Quotes<i class="bi bi-caret-down-fill" id="ic"></i></div>
+                        <div class="dropdown-content" id="giving">
+                            <div class="row">test3</div>
+                            <div class="row">test3</div>
+                            <div class="row">test3</div>
+                        </div>
+                    </div>
+                    <div class="navTabs" id="signbtn"><a href=signup.html>Sign Up</a></div>
+                    <div class="navTabs" id="aboutbtn"><a href=aboutus.html>About Us</a></div>
                 </div>
-                <div class="col-3">
+                <div class="col-3 navIcons">
                     <i class="bi bi-envelope fs-6 navTabs"></i>
                     <i class="bi bi-person-square fs-6 navTabs"></i>
-                    <span class="align-middle navTabs promo">Free Try</span>
+                    <div class="align-middle navTabs promo">Free Try</div>
                 </div>
             </div>
+            <div class="row gap-0 justify-content-center align-items-top text-start panelContainer">
+                <div class="col-5 leftPanel bg-danger">
+                    <h2>Get Quotations,<br/>With QuotStation</h2>
+                    <h4 class="mt-5">QuotStation enables you to efficiently reach an open supply network in minutes with more diversity, more choices, more transparency with less time spent.</h4>
+                    <button type="button" class="btn btn-outline-dark mt-5 btn-lg">Try us for free</button>
+                </div>
+                <div class="col-5 bg-light rightPanel" id="rp">
+                    <h3>Finding the Right suppliers can sometimes be tedious.<br/> Cut down the guesswork and waiting. We are here.</h3>
+                    <img src="images/choice.png" alt="choices" id="choice">
+                    <div class="ball-r"></div>
+                    <div class="ball-g"></div>
+                    <div class="ball-b"></div>
+                </div>
+            </div>
+            <div class="row gap-0 justify-content-center align-items-top text-start">
+                <div class="col-5 leftBody">
+                    
+                </div>
+                <div class="col-5 rightBody" id="rb">
+                    <h3 id="trigger1">Create a quotation request within minutes</h3>
+                    <h4 class="mt-5">Our straighforward system makes a request for quote easy and painfree.</h4>
+                </div>
+            </div>
+           
     </div>
 
     <!--Linking jQuery, Bootstrap and external JS script files-->
