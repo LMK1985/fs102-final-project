@@ -10,6 +10,7 @@
     font-size: 12pt;
     position: sticky;
     top: 0;
+    z-index:9;
 }
 .logo img {
     height:45px;
@@ -64,25 +65,41 @@ i {
     top: 54px;
     left: 0px;
     background-color: #f9f9f9;
-    padding: 2% 15%;
+    padding: 2% 14%;
     width: 100%;
-    height: 50%;
+    height: 60%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 2;
     text-align: left;  
 }
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #BFE4DC;
 }
 .content {
     font-size: smaller;
+    padding-top: 1.5%;
+    padding-right: 3%;
+}
+.content:hover {
+    background-color:#BFE4DC;
+}
+.pushContainer {
+    transition: margin-top .5s;
+}
+.push {
+    margin-top: 26%;
+}
+.hide {
+    display: none;
+}
+.current {
+    background-color: #BFE4DC;
 }
 .leftPanel {
     width:50%;
@@ -108,6 +125,7 @@ h3 {
     text-align: center;
 }
 .rightPanel img {
+    cursor: pointer;
     width:60%;
     height:auto;
     padding-top: 6rem;
@@ -151,5 +169,184 @@ h3 {
     height: auto;
     padding-left:13%;
     padding-top: 10%;
-    
+}
+.leftBody img {
+    width:90%;
+    height:auto;
+    padding-bottom: 40%;
+}
+.bodyHeader {
+    padding-top: 15%;
+}
+.bodySub {
+    padding: 2% 5% 40% 5%;
+}
+#footer {
+    background-color: black;
+    padding: 1% 10% 1% 10%;
+}
+.logoHolder {
+    padding: 2%;
+}
+.logoHolder img {
+    width: 100%;
+}
+.footerContent {
+    font-size: 2rem;
+    padding: 0 10%;
+    color: white;
+}
+.footerhr {
+    border-top: 2px solid white;
+}
+.socialHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    font-size: 2.5rem;
+    padding-top: 2%;
+    color: white;
+    width:100%;
+}
+.socialHolder a {
+    color: white;
+}
+.socialHolder a:visited {
+    color: #BFE4DC
+}
+.socialHolder a:hover {
+    color: aquamarine
+}
+
+/*content.html CSS*/
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 3% 13% 0 13%;
+}
+.flexContent {
+    background-color: #BFE4DC;
+    width:fit-content;
+}
+.contentHeader {
+    margin-top: 2%;
+    text-align: center;
+}
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); 
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index:0;
+}
+.flip-card-front {
+    background-color: #BFE4DC;
+    color: black;
+}
+.flip-card-back img {
+    width: inherit;
+    height: inherit;
+}
+.flip-card-back {
+    background-color: #bbb;
+    color: black;
+    transform: rotateY(180deg);
+}
+.cover-card {
+    background-color: transparent;
+    width: 400px;
+    height: 250px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.cover-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.cover-card-front, .cover-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.cover-card-front {
+    background-color: #F9F9F9;
+    color: black;
+    transition: opacity 2s;
+    z-index:1;
+}
+.cover-card-back {
+    background-color:lightgoldenrodyellow;
+    color: black;
+}
+.stopcover {
+    opacity: 1;
+}
+.expand-card {
+    width: 100px;
+    height: 100px;
+    background-color: lightskyblue;
+    transition: width 2s, height 2s;
+    text-align: center;
+    overflow: hidden;
+    cursor: move;
+}
+.plan-card {
+    background-color: white;
+    width: 350px;
+    height: 500px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    text-align: center;
+    box-shadow: 0 0 20px 5px rgba(33,33,33,.3); 
+    /* transform: rotatex(75deg) translatey(-200px) translatez(-100px);
+    transition: 1s;
+    perspective: 1000px;
+    transform-style: preserve-3d; */
+}
+li {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+.accordion-header {
+    background-color:#F9F9F9;
+}
+.accordion-button {
+    font-size: 1.2rem;
+}
+.accordion {
+    margin-bottom: 5%;
+}
+.formContainer {
+    background-color: #BFE4DC;
+    padding: 3%;
+    margin: 3% 20% 3% 20%;
 }

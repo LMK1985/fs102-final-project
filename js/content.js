@@ -1,50 +1,4 @@
-$(() => {   // jQuery document ready function
-  
-    // Command lines that start on document load
-    animateObj(".ball-r");     // Function to animate balls
-    animateObj(".ball-g");
-    animateObj(".ball-b");
-
-    // Common variables declared
-    var currentScroll = window.pageYOffset;     // Current pixels scrolled in window
-    var trigger1 = document.getElementById("trigger1");     // Variable declared for easy DOM selection
-    var trigger1top = trigger1.offsetTop;                   // Element rb's top pixel distance away from window top
-    var imgX = document.getElementById('choice').offsetLeft;
-    var imgY = document.getElementById('choice').offsetTop;
-    
-    // If statements for scrolling animation triggers
-    if (currentScroll > trigger1top) {
-        // change image
-    }
-
-    // Function to get random position for animated balls
-    function randomPos() {
-        var y = $(".rightPanel").height() - 100;     // Get y postion within rightpanel height
-        var x = $(".rightPanel").width() - 100;      // Get x postion within rightpanel width
-        var yaxis = Math.floor(Math.random() * x);
-        var xaxis = Math.floor(Math.random() * y);
-        return [yaxis,xaxis];    
-    }
-
-    // On click
-    $("#choice").click(() => {
-        $(".ball-r").stop();
-        $(".ball-g").stop();
-        $(".ball-b").stop();
-        $(".ball-r").animate({top: imgY + imgY/2.5, left: imgX + imgX/5}, 2000);
-        $(".ball-g").animate({top: imgY + imgY/1.8, left: imgX + imgX/5.5},2000);
-        $(".ball-b").animate({top: imgY + imgY/1.8, left: imgX + imgX/4.4}, 2000);
-    });
-
-    // Function that creates the animation for the 3 balls
-    function animateObj(obj) {
-        var coordinates = randomPos();
-
-        $(obj).animate({bottom: coordinates[0], right: coordinates[1]}, 8000,
-            function() {
-                animateObj(obj);    // Call the function again after animation is completed
-        }); 
-    }
+$(() => { 
 
     // On click slide dropdown content for first Navbar item
     $("#whybtn").on("click", (e) => {
@@ -97,19 +51,33 @@ $(() => {   // jQuery document ready function
         $(".ball-b").removeClass("hide");
     });
 
+    // On hover set cover-card-front division opacity to zero to display cover-card-back contents
+    $("div.cover-card-front").hover(function() {
+        $(this).css("opacity", 0);
+    }, function() {
+        $(this).css("opacity", 1);
+    });
+
+    // On hover animate expand-card division element width and height
+    $("div.expand-card").hover(function() {
+            $(this).css({
+                "width": "400px",
+                "height": "250px",
+            });
+        }, function() {
+            $(this).css({
+                "width": "100px",
+                "height": "100px",
+            });
+    });
+
     // Script for animating back to top scroll on click
     $("#backtop").on("click", function() {
         window.scrollTo({top: 0, behavior: "smooth"});
     });
 
-    // $(document).on("scroll", function () {
-    //     console.log(currentScroll);
-    //     console.log(trigger1top);
-    //     console.log(trigger1top - currentScroll);
-    // });
+    // Scripts for Signup page 
 
 
-
-    
 
 });
