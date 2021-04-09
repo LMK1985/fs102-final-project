@@ -17,9 +17,10 @@
     <div class="container-fluid pageWrapper">
         
         <!--Navigation Bar with responsive container and icons-->
-        <div class="row navBar gap-0 justify-content-center align-items-center text-center shadow"> 
-            <div class="col-2 logo"><a href="index.html"><img src="images/QuotStation-Logo.jpg" alt="QuotStation Logo"></a></div>
-            <div class="col-5 navItems">
+        <div class="row navBar gap-0 justify-content-center align-items-center text-center shadow">
+            <div class="col-2 logo text-end"><a href="index.html"><img src="images/QuotStation-Logo.jpg" alt="QuotStation Logo"></a></div>
+            <div class="col-7 navItems">
+                <div class="navTabs hide" id="allbtn"><a href="content.html">All About QuotStation</a></div>    <!--This tab will appear when Navbar is in burger mode-->
                 <!--Dropdown component for navTab 1-->
                 <div class="dropdown"> 
                     <div class="navTabs" id="whybtn">Why QuotStation?<i class="bi bi-caret-down-fill" id="ia"></i></div>
@@ -107,23 +108,61 @@
                         </div>
                     </div>
                 </div>
-                <div class="navTabs current" id="signbtn">Sign Up</div>
-                <div class="navTabs" id="aboutbtn"><a href=aboutus.html>About Us</a></div>
+                <div class="navTabs" id="signbtn" onclick="location.href='signup.html'">Sign Up</div>
+                <div class="navTabs" id="aboutbtn" onclick="location.href='aboutus.html'">About Us</div>
             </div>
+            <!--Icons area on the right side of Navbar-->
             <div class="col-3 navIcons">
-                <i class="bi bi-envelope fs-6 navTabs"></i>
-                <i class="bi bi-person-square fs-6 navTabs"></i>
-                <div class="align-middle navTabs promo">Free Try</div>
+                <i class="bi bi-envelope fs-6 navTabs" onclick="location.href='aboutus.html'"></i>
+                <i class="bi bi-person-square fs-6 navTabs" data-bs-toggle="modal" data-bs-target=#loginForm></i>
+                <div class="align-middle navTabs promo" onclick="location.href='signup.html'">Free Try</div>
+            </div>
+             <!--Animated Burger Navbar Div for small and medium screen sizes-->
+            <div class="burger col-1">
+                <div class="burgertop"></div>
+                <div class="burgermid"></div>
+                <div class="burgerbot"></div>
+            </div>
+        </div>
+        <!-- Modal for Login-->
+        <div class="modal fade" id="loginForm" tabindex="-1" aria-labelledby="loginForm" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="loginLabel">Please enter your email and password to login.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3 needs-validation">
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping email">Email:</span>
+                                <input type="email" class="form-control" id="email" required placeholder="Email Address" aria-label="Email" aria-describedby="addon-wrapping">
+                            </div>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping password">Password:</span>
+                                <input type="password" class="form-control" id="password" required placeholder="Enter Password" aria-label="Password" aria-describedby="addon-wrapping">
+                            </div>
+                            <div class="feedback text-center" id="feedback"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div><button type="button" class="btn btn-outline-dark px-5" id="loginbtn">Login</button></div>
+                    </div>
+                    <div class="modal-footer">
+                        <span class="px-3">I do not have an existing QuotStation account.</span>
+                        <div><button type="button" class="btn btn-outline-primary px-4" onclick="location.href='signup.html'">Signup</button></div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!--Container for all row items to allow pushing when dropdown-->
         <div class="pushContainer">
             
-            <!--Account plans with 3D effects-->
+            <!--Account plans-->
             <h3 class="contentHeader">Account Plans</h3>
             <div class="row gap-5 text-start flexContainer">
-                <div class="plan-card">
+                <div>
                     <h4 class="mt-4">Basic Buyer Account</h4>
                     <div class="p-3 fw-bold fs-3">Free</div>
                     <div class="fs-6 fst-italic">Free to use buyer account. Able to create request for quotations and manage them freely.</div>
@@ -137,7 +176,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="plan-card">
+                <div>
                     <h4 class="mt-4 text-primary">Business Seller Account</h4>
                     <div class="p-3 fw-bold fs-3">$49 /month</div>
                     <div class="fs-6 fst-italic">Free to use buyer account. Able to create request for quotations and manage them freely.</div>
@@ -153,7 +192,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="plan-card">
+                <div>
                     <h4 class="mt-4 text-danger">Professional Corporate Account</h4>
                     <div class="p-3 fw-bold fs-3">$99 /month</div>
                     <div class="fs-6 fst-italic">Free to use buyer account. Able to create request for quotations and manage them freely.</div>
@@ -223,7 +262,7 @@
                       </select>
                     </div>
                     <div class="col-md-4">
-                      <label for="validationDefault05" class="form-label">Zip</label>
+                      <label for="validationDefault05" class="form-label">Postal Code</label>
                       <input type="text" class="form-control" id="validationDefault05" required>
                     </div>
                     <div class="col-md-12">
@@ -257,10 +296,10 @@
                   </form>
             </div>
 
-             <!--Footer area-->
+            <!--Footer area-->
             <div class="row gap-0 text-center justify-content-center" id="footer">
-                <div class="col-2 logoHolder"><img src="images/QuotStation-Logo-Inversed.png"></div>
-                <div class="footerContent">Getting quotations effortlessly, efficiently, escrowed, empowered & entrusted by many.</div>
+                <div class="col-2 logoHolder"><a href="index.html"><img src="images/QuotStation-Logo-Inversed.png"></a></div>
+                <div class="footerContent">Getting quotations effortlessly, efficiently, escrowed, empowered & entrusted by clients.</div>
                 <div class="socialHolder">
                     <a href="index.html"><i class="bi bi-facebook"></i></a>
                     <a href="index.html"><i class="bi bi-instagram"></i></a>
@@ -269,10 +308,10 @@
                     <a href="index.html"><i class="bi bi-youtube"></i></a>
                     <a href="index.html"><i class="bi bi-whatsapp"></i></a>
                 </div>
-                <div class="btn-group w-25 my-5" role="group" aria-label="Basic outlined example">
+                <div class="btn-group w-50 my-5" role="group" aria-label="Basic outlined example">
                     <button type="button" class="btn btn-outline-light" id="backtop">Back to top</button>
                     <button type="button" class="btn btn-outline-light">Terms & Privacy</button>
-                    <button type="button" class="btn btn-outline-light">Try for free</button>
+                    <button type="button" class="btn btn-outline-light" onclick="location.href='signup.html'">Try for free</button>
                 </div>
                 <hr class="footerhr"/>
                 <h6 class="text-light">Copyright © 2021 QuotStation™ ® Legend Star Corporation. All rights reserved.</h6>
