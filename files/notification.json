@@ -1,0 +1,110 @@
+[
+    {
+        "userkey": 0,
+        "noticeid": 0,
+        "noticesubject": "Hi there Ann!",
+        "noticecontent": "1234",
+        "noticedate": "23/06/2021",
+        "noticetime": "00:00",
+        "noticestatus": "new"
+    },
+    {
+        "userkey": 0,
+        "noticeid": 1,
+        "noticesubject": "Testing!",
+        "noticecontent": "testing",
+        "noticedate": "24/05/2021",
+        "noticetime": "15:30",
+        "noticestatus": "new"
+    },
+    {
+        "userkey": 0,
+        "noticeid": 2,
+        "noticesubject": "Hi there!",
+        "noticecontent": "1234",
+        "noticedate": "23/05/2021",
+        "noticetime": "00:00",
+        "noticestatus": "new"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 0,
+        "noticesubject": "Hi there Aaron!",
+        "noticecontent": "1234",
+        "noticedate": "23/04/2021",
+        "noticetime": "00:00",
+        "noticestatus": "new"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 1,
+        "noticesubject": "Testing!",
+        "noticecontent": "testing",
+        "noticedate": "22/04/2021",
+        "noticetime": "15:30",
+        "noticestatus": "new"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 2,
+        "noticesubject": "Your request for quotation has been posted.",
+        "noticecontent": "Done.",
+        "noticedate": "21/04/2021",
+        "noticetime": "11:00",
+        "noticestatus": "new"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 4,
+        "noticesubject": "New Quotation received!",
+        "noticecontent": "Yes! You got a new quotation",
+        "noticedate": "19/04/2021",
+        "noticetime": "10:50",
+        "noticestatus": "new"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 5,
+        "noticesubject": "Testing!",
+        "noticecontent": "testing",
+        "noticedate": "16/04/2021",
+        "noticetime": "15:30",
+        "noticestatus": "new"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 6,
+        "noticesubject": "Old messages test start!",
+        "noticecontent": "1234",
+        "noticedate": "23/04/2021",
+        "noticetime": "00:00",
+        "noticestatus": "read"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 7,
+        "noticesubject": "Hi there Ann!",
+        "noticecontent": "1234",
+        "noticedate": "23/04/2021",
+        "noticetime": "00:00",
+        "noticestatus": "read"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 8,
+        "noticesubject": "Testing!",
+        "noticecontent": "testing",
+        "noticedate": "24/04/2021",
+        "noticetime": "15:30",
+        "noticestatus": "read"
+    },
+    {
+        "userkey": 1,
+        "noticeid": 9,
+        "noticesubject": "Hi there!",
+        "noticecontent": "1234",
+        "noticedate": "23/04/2021",
+        "noticetime": "00:00",
+        "noticestatus": "read"
+    }
+]

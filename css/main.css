@@ -1,3 +1,10 @@
+/* Configuring tranforms effects/ transition to preserve 3D*/
+body {
+    transform: perspective(900px);      /*User perspective control for transform animations for more realism with slight warping*/
+    transform-style: preserve-3d;       /*Tells the browser that 3D transformed children of body section shouldn't be flatten into parent*/
+    -webkit-transform: perspective(900px);  /*Same as above, but for other browsers that do not support*/
+    -webkit-transform-style: preserve-3d;
+}
 /* Applying Google Font Abel to all body elements */
 .pageWrapper {
     justify-items: center;
@@ -10,6 +17,7 @@
     font-size: 12pt;
     position: sticky;
     top: 0;
+    z-index:8;
 }
 .logo img {
     height:45px;
@@ -29,7 +37,7 @@ i {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content:start;
 }
 .navTabs {
     padding: 15px 25px;
@@ -64,31 +72,132 @@ i {
     top: 54px;
     left: 0px;
     background-color: #f9f9f9;
-    padding: 2% 15%;
+    padding: 2% 10%;
     width: 100%;
-    height: 50%;
+    height: fit-content;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 2;
     text-align: left;  
 }
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #BFE4DC;
 }
 .content {
     font-size: smaller;
+    padding-top: 1.5%;
+    padding-right: 3%;
+}
+.content:hover {
+    background-color:#BFE4DC;
+}
+/* Burger is the Icon for the Navbar replacement for small and medium screens*/
+.burger {
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    margin-top: 5px;
+    z-index: 9;
+    display: none;
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color:black;
+    margin: 5px;
+    transition: all 0.8s ease;
+}
+/*Media screen control for hiding Navbar and showing burger NavIcon and handling overall element size adjustments on small and medium screens*/
+@media screen and (max-width:935px) {
+    body {
+        overflow-x: hidden;
+    }
+    .ball-r, .ball-g, .ball-b {
+        display: none
+    }
+    #ia, #ib, #ic, #whybtn, #getbtn, #givebtn {
+        display: none;
+    }
+    .burger, #allbtn {
+        display: block;
+    }  
+    .navBar {
+        height: 54px;
+    }
+    .navIcons {
+        width: 70%;
+        justify-content:center;
+    }
+    .navItems {
+        position: absolute;
+        left: 0;
+        height:auto;
+        width: 100%;
+        top: 54px;
+        background-color: #BFE4DC;
+        font-size: 2rem;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+    }
+    .navTabs:hover {
+        background-color: white;
+    }
+    .logo {
+        padding-left: 5%;        
+    }  
+}
+/* To slide in Nav Items*/
+.navActive {
+    transform: translateX(0%);
+    transition: transform 0.5s ease-in;
+}
+/* The following 3 CSS lines are for animating the burger lines to become cross*/
+.morph .burgertop {
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.morph .burgermid {
+    opacity: 0;
+}
+.morph .burgerbot {
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+.navTransOn {
+    transition: transform 0.5s ease-out;
+}
+.pushContainer {
+    transition: margin-top .5s;
+}
+.push {
+    margin-top: 26%;
+}
+.hide {
+    display: none;
+}
+.current {
+    background-color: #BFE4DC;
+}
+.modal-footer {
+    justify-content: center;
+    border-top: none;
+    border-bottom: 1px solid lightgrey;
+}
+#count {
+    color:red;
+    font-weight: bold;
 }
 .leftPanel {
     width:50%;
     height:100%;
     padding-top:10%;
-    padding-left:13%;
+    padding-left:10%;
     padding-bottom:13%;
 }
 h2 {
@@ -100,14 +209,75 @@ h3 {
     font-size: 2rem;
     line-height: 3rem;
 }
+#mainTitle {
+    margin-bottom: 1rem;
+}
+#playtitle {
+    font-size: 2.5rem;
+    width:fit-content;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    margin-bottom: 8rem;
+    cursor: pointer;
+    pointer-events: none;
+}
+#playtitle:hover {
+    color: #BFE4DC;
+}
+#playobjects {
+    font-size: 2.5rem;
+    width:fit-content;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    margin-left: 50%;
+    cursor: pointer;
+}
+#playobjects:hover {
+    color: #BFE4DC;
+}
+#stopobjects {
+    font-size: 1.2rem;
+    width:fit-content;
+    background-color: black;
+    color: white;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    margin-left: 40%;
+    padding: 15px;
+    cursor: pointer;
+    display: none;
+}
+#stopobjects:hover {
+    color: black;
+    background-color: #BFE4DC;
+}
+/*Animate main title*/
+#mainTitle span {
+    opacity: 0;
+    transform: rotate(-270deg) translate(250px, 0);
+    transition: all 0.5s ease;
+    display: inline-block;
+    white-space: pre;
+    color: white;
+}
+#mainTitle span.effects {
+    opacity: 1;
+    transform: rotate(0deg) translate(0);
+    color: #BFE4DC;
+}
+#mainTitle span.colorchange {
+    color: black;
+}
 .rightPanel {
     width: 50%;
-    height: 100%;
+    height: auto;
     padding-top:10%;
     padding-bottom:4.7%;
     text-align: center;
+
 }
 .rightPanel img {
+    cursor: pointer;
     width:60%;
     height:auto;
     padding-top: 6rem;
@@ -115,29 +285,35 @@ h3 {
 .ball-r {
     width: 50px;
     height: 50px;
-    background-color:red; /* For browser that does not support */
+    background-color:red; /* In case browser does not support radial-gradient */
     background-image: radial-gradient(circle, white 5%, red 75%, black);
     color: white;
     border-radius: 50%;
     position:absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 .ball-g {
     width: 50px;
     height: 50px;
-    background-color: green; /* For browser that does not support */
+    background-color: green; /* In case browser does not support radial-gradient */
     background-image: radial-gradient(circle, white 5%, green 75%, black);
     color: white;
     border-radius: 50%;
     position:absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 .ball-b {
     width: 50px;
     height: 50px;
-    background-color:blue; /* For browser that does not support */
+    background-color:blue; /* In case browser does not support radial-gradient */
     background-image: radial-gradient(circle, white 5%, blue 75%, black);
     color: white;
     border-radius: 50%;
     position:absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 }
 .rightBody {
     background-color: #BFE4DC;
@@ -149,7 +325,338 @@ h3 {
 .leftBody {
     width:50%;
     height: auto;
-    padding-left:13%;
+    padding-left:10%;
     padding-top: 10%;
-    
+}
+.leftBody img {
+    width:90%;
+    height:auto;
+    padding-bottom: 40%;
+    position: sticky;
+    left: 0;
+    top: 0;
+    padding-top: 200px;
+}
+#post {
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg) translate(0) scale(1);
+    transition: all 1s ease;   
+}
+#post.animate {
+    opacity: 0;
+    left: 300;
+    transform: rotate(-360deg) translateX(100%) scale(0.2);  
+}
+#quotes {
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s ease-in;  
+}
+#quotes.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+#confirm {
+    padding-bottom: 10%;
+    z-index: 3;
+    opacity: 0;
+    transform: rotate(-180deg) translateY(100%);  
+    transition: all 1s ease-in;  
+}
+#confirm.animate {
+    opacity: 1;
+    transform: rotate(0deg) translateY(0);  
+}
+.bodyHeader {
+    padding-top: 50%;
+}
+.bodySub {
+    padding: 2% 5% 40% 5%;
+}
+#footer {
+    background-color: black;
+    padding: 1% 10% 1% 10%;
+}
+.logoHolder {
+    padding: 1%;
+}
+.logoHolder img {
+    width: 100%;
+}
+.footerContent {
+    font-size: 2rem;
+    color: white;
+}
+.footerhr {
+    border-top: 2px solid white;
+}
+.socialHolder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    font-size: 2.5rem;
+    padding-top: 2%;
+    color: white;
+    width:100%;
+}
+.socialHolder a {
+    color: white;
+}
+.socialHolder a:visited {
+    color: #BFE4DC
+}
+.socialHolder a:hover {
+    color: aquamarine
+}
+.btn-group {
+    justify-content: center;
+}
+
+/*content.html CSS*/
+.flexContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    padding: 3% 10% 0 10%;
+}
+.contentHeader {
+    margin-top: 2%;
+    text-align: center;
+}
+.flip-card {
+    background-color: transparent;
+    width: 25%;
+    height: fit-content;
+    min-width: 260px;
+    max-width: 760px;
+    perspective: 1000px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 350px;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); 
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    z-index:0;
+}
+.flip-card-front {
+    background-color: #BFE4DC;
+    color: black;
+}
+.flip-card-back img {
+    width: inherit;
+    height: inherit;
+}
+.flip-card-back {
+    background-color: #bbb;
+    color: black;
+    transform: rotateY(180deg);
+}
+.cover-card {
+    background-color: transparent;
+    width: 25%;
+    min-width: 260px;
+    max-width: 520px;
+    height: fit-content;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+.cover-card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    text-align: center;
+    box-shadow: 0 15px 30px 0 rgba(0,0,0,0.2);
+}
+.cover-card-front, .cover-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.cover-card-front {
+    background-color: #F9F9F9;
+    color: black;
+    transition: opacity 2s;
+    z-index:1;
+}
+.cover-card-back {
+    background-color:lightgoldenrodyellow;
+    color: black;
+}
+.stopcover {
+    opacity: 1;
+}
+.expand-card {
+    width: 260px;
+    height: 100px;
+    background-color: lightskyblue;
+    transition: width 2s, height 2s;
+    text-align: center;
+    overflow: hidden;
+    cursor: move;
+}
+div.plan-card {
+    background-color: white;
+    width: 350px;
+    height: 500px;
+    cursor: pointer;
+    margin-bottom: 5rem;
+    text-align: center;
+    box-shadow: 0 0 20px 5px rgba(33,33,33,.5); 
+    transform: rotateX(50deg);
+    transition: 1s;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+div.plan-card:hover {
+    transform: rotateX(0deg);
+    transition: 1s;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+}
+li {
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+.accordion-header {
+    background-color:#F9F9F9;
+}
+.accordion-button {
+    font-size: 1.2rem;
+}
+.accordion {
+    margin-bottom: 5%;
+}
+.formContainer {
+    background-color: #BFE4DC;
+    padding: 3%;
+    margin: 3% 20% 3% 20%;
+}
+
+/*account.html CSS*/
+#pleaseLogin {
+    color: red;
+    margin: 5%;
+    text-align: center;
+    display: none;
+}
+.leftUserPanel {
+    width:50%;
+    height:100%;
+    padding-top:3%;
+    padding-left:10%;
+    padding-bottom:3%;
+}
+.greeting {
+    margin-bottom: 4rem;
+}
+.notifications {
+    color: red;
+    font-weight: bold;
+    padding-right: 10px;
+}
+.profileContainer {
+    background-color: lightblue;
+    padding: 3%;
+    margin-right: 10%;
+}
+.rightUserPanel {
+    width: 50%;
+    height: auto;
+    padding-top:14rem;
+    padding-bottom:5%;
+    padding-left: 5%;
+}
+.noticeContainer {
+    justify-content:start;
+    width: 80%;
+}
+.notice {
+    background: linear-gradient(to bottom, #F9F9F9 25%, lightgrey 75%);
+    height: auto;
+    border: ridge 3px lightblue;
+    padding: 10px;
+    cursor: pointer;
+}
+/*remove bottom overlapped border except for lastchild*/
+.notice:not(:last-child) {
+    border-bottom: none;
+}
+.notice:hover {
+    background: #BFE4DC;
+}
+.new {
+    background: linear-gradient(to bottom, lightgoldenrodyellow 60%, white 95%);
+}
+.noticeSubject {
+    font-weight: bold;
+}
+.noticeStatus {
+    float:right;
+    font-weight: bold;
+}
+.noticeDate {
+    float:right;
+}
+.noticeTime {
+    float:right;
+}
+#productWrapper {
+    background-color:#BFE4DC;
+    padding-bottom: 4rem;
+}
+#productHeader {
+    margin-bottom: 2rem;
+}
+#searchArrow {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+#productContainer {
+    width:50%;
+}
+.product {
+    background-color:floralwhite;
+    padding: 3%;
+    margin-bottom: 1rem;;
+    border: inset silver 5px;
+    border-radius: 50px;
+}
+.productMaincat {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color:black;
+}
+.productSubcat {
+    margin-left: 10px;
+    font-weight: bold;
+}
+.productKeywords {
+    margin-left: 10px;
+    font-style: italic;
+    font-weight: bolder;
+}
+/*aboutus.html CSS*/
+img.mk {
+    width: 100%;
+    height: 100%;    
 }

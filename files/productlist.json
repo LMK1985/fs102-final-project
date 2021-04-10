@@ -1,0 +1,26 @@
+[
+    {
+        "productid": 0,
+        "productcat": "Pets",
+        "productsubcat": "Grooming,Veterinary,Supplies,Animals",
+        "productkeywords": "Care,Doctor,Wash,Food,Mammals,Reptiles,Fishes"
+    },
+    {
+        "productid": 1,
+        "productcat": "Entertainment",
+        "productsubcat": "Toys,Games,Movies,Puzzles,Anime,Comics,Entertainers,Magic",
+        "productkeywords": "Robots,Dinosaurs,Disney,Starwars,Jigsaw,Rubix Cube,Clown,Ballon Sculptor,Magician"
+    },
+    {
+        "productid": 2,
+        "productcat": "Beauty",
+        "productsubcat": "Haircare,Skincare,Bodycare,Enhancements,Manicure,Pedicure,Cosmetics,Alteration",
+        "productkeywords": "Shampoo,Soap,Foam,Lotion,Facial,Nail Polish,Wigs,Perfume,Collagen"
+    },
+    {
+        "productid": 3,
+        "productcat": "Drinks",
+        "productsubcat": "Alchohol,Soft Drinks,Juices,Dairy,Herbal,Medication,Health,Wellness,Tea,Coffee",
+        "productkeywords": "Beer,Liquor,Spirits,Whiskey,Rootbeer,Coke,Pepsi,Wines,Honey,English Breakfast,Earl Gray,Blue Mountain,Nescafe"
+    }
+]

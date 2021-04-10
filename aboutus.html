@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Project - About Us Page</title>
+    <title>Final Project - Lam Man Kid</title>
     <!--Linking Google special font, bootstrap CSS/Icons & external CSS files-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet">
@@ -13,9 +13,261 @@
     <link rel="stylesheet" href="css/main.css" type="text/css">
 </head>
 <body>
-     <!--Linking jQuery, Bootstrap and external JS script files-->
-     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-     <script src="js/script.js"></script>
+    <!--Main page wrapper-->
+    <div class="container-fluid pageWrapper">
+        
+        <!--Navigation Bar with responsive container and icons-->
+        <div class="row navBar gap-0 justify-content-center align-items-center text-center shadow">
+            <div class="col-2 logo text-end"><a href="index.html"><img src="images/QuotStation-Logo.jpg" alt="QuotStation Logo"></a></div>
+            <div class="col-7 navItems">
+                <div class="navTabs hide" id="allbtn"><a href="content.html">All About QuotStation</a></div>    <!--This tab will appear when Navbar is in burger mode-->
+                <!--Dropdown component for navTab 1-->
+                <div class="dropdown"> 
+                    <div class="navTabs" id="whybtn">Why QuotStation?<i class="bi bi-caret-down-fill" id="ia"></i></div>
+                    <div class="dropdown-content" id="why">
+                        <div class="row">
+                            <div class="col-2">WHY US<hr/></div>
+                            <div class="col-6">FEATURES<hr/></div>
+                            <div class="col-2">PLANS<hr/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Overview</strong><br/>Easy to use, efficient to use and empowering to use.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Open Market</strong><br/>Your request reaches all relevant suppliers giving you more choices and variety.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Receive Quotes Automatically</strong><br/>Gone are the days you have to search and contact individual suppliers and wait for possible responses.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Basic Buyer Account (Free)</strong><br/>Free to use for receiving quotations. Source to your heart's content.</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Free Buyer Accounts</strong><br/>All basic buyer accounts are free to use. No risk, no costs.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Easy Minimalist Interface</strong><br/>Get setup within minutes and start creating requests.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Transparent And Safe</strong><br/>With review systems and escrow services onboard, risk is greatly reduced.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Business Seller Account</strong><br/>Seller features will unlocked, allowing you to give quotations for relevant requests.</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Pro Market Intelligence</strong><br/>Actionable market data and insights with pro account.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Great Marketing Platform</strong><br/>As a seller, you get request for relevant quotations automatically.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Overseas Reach & Exposure</strong><br/>With international buyers present on the platform, you can choose to accept and test international orders.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Professional Corporate Account</strong><br/>Full features in all aspects are unlocked, including critical market data and usage statistics.</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!--Dropdown component for navTab 2-->
+                <div class="dropdown">
+                    <div class="navTabs" id="getbtn">I Need Quotes<i class="bi bi-caret-down-fill" id="ib"></i></div>
+                    <div class="dropdown-content" id="getting">
+                        <div class="row">
+                            <div class="col-2">FOR BUYERS<hr/></div>
+                            <div class="col-6">FEATURES<hr/></div>
+                            <div class="col-2">PLANS<hr/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Get Free Account</strong><br/>Buyers accounts are free to use. You can signup by clicking on the Basic Buyer Account option under Plans</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Open Market</strong><br/>Your request reaches all relevant suppliers giving you more choices and variety.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Receive Quotes Automatically</strong><br/>Gone are the days you have to search and contact individual suppliers and wait for possible responses.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Basic Buyer Account (Free)</strong><br/>Free to use for receiving quotations. Source to your heart's content.</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Create Quotation Request</strong><br/>Upon login to your buyer account, you can create quotation requests on the account main page.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Easy Minimalist Interface</strong><br/>Get setup within minutes and start creating requests.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Transparent And Safe</strong><br/>With review systems and escrow services onboard, risk is greatly reduced.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Business Seller Account</strong><br/>Seller features will unlocked, allowing you to give quotations for relevant requests.</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Review Quotations Received</strong><br/>After receving quotations, review and choose the one you would like to confirm.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Great Sourcing Platform</strong><br/>As a buyer you can quickly and efficiently get multiple quotation offers.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Overseas Reach & Exposure</strong><br/>With international suppliers onboard the platform, you can get access to international quotation offers.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Professional Corporate Account</strong><br/>Full features in all aspects are unlocked, including critical market data and usage statistics.</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!--Dropdown component for navTab 3-->
+                <div class="dropdown">
+                    <div class="navTabs" id="givebtn">I Give Quotes<i class="bi bi-caret-down-fill" id="ic"></i></div>
+                    <div class="dropdown-content" id="giving">
+                        <div class="row">
+                            <div class="col-2">FOR SELLERS<hr/></div>
+                            <div class="col-6">FEATURES<hr/></div>
+                            <div class="col-2">PLANS<hr/></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Get Business Or Pro Account</strong><br/>To start selling on the platform, signup for a Business or Professional account.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Free Market</strong><br/>Everyone has a chance to bid for a quotation request without limitations and everyone is notified</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Receive Quotes 24/7</strong><br/>Once your account is setup, you can start receiving quotation requests anytime, anywhere.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Basic Buyer Account (Free)</strong><br/>Free to use for receiving quotations. Source to your heart's content.</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Respond To Quotation Request</strong><br/>You can view relevant quotation requests on the account main page and make bids for them.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Easy Minimalist Interface</strong><br/>Get setup within minutes and start receiving requests.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Transparent And Safe</strong><br/>With review systems and escrow services onboard, risk is greatly reduced.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Business Seller Account</strong><br/>Seller features will unlocked, allowing you to give quotations for relevant requests.</a></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-2 content"><a href="content.html"><strong>Fulfillment & Payment</strong><br/>After confirmation on a quotation, proceed to fulfill the order and payment will be received after completion.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Great Marketing Platform</strong><br/>As a seller, you get request for relevant quotations automatically.</a></div>
+                            <div class="col-3 content"><a href="content.html"><strong>Overseas Reach & Exposure</strong><br/>With international buyers present on the platform, you can choose to accept and test international orders.</a></div>
+                            <div class="col-2 content"><a href="signup.html"><strong>Professional Corporate Account</strong><br/>Full features in all aspects are unlocked, including critical market data and usage statistics.</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navTabs" id="signbtn" onclick="location.href='signup.html'">Sign Up</div>
+                <div class="navTabs current" id="aboutbtn">About Us</div>
+            </div>
+            <!--Icons area on the right side of Navbar-->
+            <div class="col-3 navIcons">
+                <i class="bi bi-envelope fs-6 navTabs" onclick="location.href='aboutus.html'"></i>
+                <i class="bi bi-person-square fs-6 navTabs" data-bs-toggle="modal" data-bs-target=#loginForm></i>
+                <div class="align-middle navTabs promo" onclick="location.href='signup.html'">Free Try</div>
+            </div>
+             <!--Animated Burger Navbar Div for small and medium screen sizes-->
+            <div class="burger col-1">
+                <div class="burgertop"></div>
+                <div class="burgermid"></div>
+                <div class="burgerbot"></div>
+            </div>
+        </div>
+        <!-- Modal for Login-->
+        <div class="modal fade" id="loginForm" tabindex="-1" aria-labelledby="loginForm" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="loginLabel">Please enter your email and password to login.</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="row g-3 needs-validation">
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping email">Email:</span>
+                                <input type="email" class="form-control" id="email" required placeholder="Email Address" aria-label="Email" aria-describedby="addon-wrapping">
+                            </div>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text" id="addon-wrapping password">Password:</span>
+                                <input type="password" class="form-control" id="password" required placeholder="Enter Password" aria-label="Password" aria-describedby="addon-wrapping">
+                            </div>
+                            <div class="feedback text-center" id="feedback"></div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div><button type="button" class="btn btn-outline-dark px-5" id="loginbtn">Login</button></div>
+                    </div>
+                    <div class="modal-footer">
+                        <span class="px-3">I do not have an existing QuotStation account.</span>
+                        <div><button type="button" class="btn btn-outline-primary px-4" onclick="location.href='signup.html'">Signup</button></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Container for all row items to allow pushing when dropdown-->
+        <div class="pushContainer">
+            
+            <!--About Us Profiles-->
+            <h3 class="contentHeader">The QuotStation Team</h3>
+            <div class="row gap-5 text-start flexContainer"> <!--Flex type display used for all rows-->
+                <!--Start of flip-card components row-->
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h4 class="mt-4">Managing Director</h4> 
+                            <p class="p-3">Lam Man Kid</p>
+                            <p>Founder and Managing Director</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <a href="https://github.com/LMK1985"><img src="images/MK.jpg" alt="MK" class="mk"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h4 class="mt-4">Managing Director</h4> 
+                            <p class="p-3">Lam Man Kid</p>
+                            <p>Founder and Managing Director</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <a href="https://github.com/LMK1985"><img src="images/MK.jpg" alt="MK" class="mk"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <h4 class="mt-4">Managing Director</h4> 
+                            <p class="p-3">Lam Man Kid</p>
+                            <p>Founder and Managing Director</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <a href="https://github.com/LMK1985"><img src="images/MK.jpg" alt="MK" class="mk"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            <!--Signup form-->
+            <h3 class="contentHeader">Contact Us</h3>
+            <div class="formContainer">
+                <form class="row g-3">
+                    <div class="col-md-3">
+                      <label for="validationDefault01" class="form-label">First Name</label>
+                      <input type="text" class="form-control" id="validationDefault01" value="Quot" required>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="validationDefault02" class="form-label">Last Name</label>
+                      <input type="text" class="form-control" id="validationDefault02" value="Station" required>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="validationDefaultUsername" class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                    <div class="col-md-3">
+                        <label for="validationDefaultUsername" class="form-label">Contact Number</label>
+                        <input type="email" class="form-control" id="validationDefaultUsername"  aria-describedby="inputGroupPrepend2" required>
+                    </div>
+                    <div class="col-6 form-floating mt-4">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                          <option selected>Please select inquiry type</option>
+                          <option value="1">Feedback & Complaints</option>
+                          <option value="2">Accounts & Technical Support</option>
+                          <option value="3">Payment Related</option>
+                          <option value="4">Other Queries</option>
+                        </select>
+                        <label for="floatingSelect">Inquiry Type</label>
+                    </div>
+                    <div class="col-6">
+                        <span class="input-group-text">Please enter message below</span>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                      <button class="btn btn-outline-dark" type="submit">Submit form</button>
+                    </div>
+                  </form>
+            </div>
+
+            <!--Footer area-->
+            <div class="row gap-0 text-center justify-content-center" id="footer">
+                <div class="col-2 logoHolder"><a href="index.html"><img src="images/QuotStation-Logo-Inversed.png"></a></div>
+                <div class="footerContent">Getting quotations effortlessly, efficiently, escrowed, empowered & entrusted by clients.</div>
+                <div class="socialHolder">
+                    <a href="index.html"><i class="bi bi-facebook"></i></a>
+                    <a href="index.html"><i class="bi bi-instagram"></i></a>
+                    <a href="index.html"><i class="bi bi-twitter"></i></a>
+                    <a href="index.html"><i class="bi bi-linkedin"></i></a>
+                    <a href="index.html"><i class="bi bi-youtube"></i></a>
+                    <a href="index.html"><i class="bi bi-whatsapp"></i></a>
+                </div>
+                <div class="btn-group w-50 my-5" role="group" aria-label="Basic outlined example">
+                    <button type="button" class="btn btn-outline-light" id="backtop">Back to top</button>
+                    <button type="button" class="btn btn-outline-light">Terms & Privacy</button>
+                    <button type="button" class="btn btn-outline-light" onclick="location.href='signup.html'">Try for free</button>
+                </div>
+                <hr class="footerhr"/>
+                <h6 class="text-light">Copyright © 2021 QuotStation™ ® Legend Star Corporation. All rights reserved.</h6>
+            </div>
+
+        </div> <!--End of pushContainer-->
+    </div> <!--End of pageWrapper-->
+
+    <!--Linking jQuery, Bootstrap and external JS script files-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <script src="js/content.js"></script>
 </body>
 </html>
