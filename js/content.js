@@ -34,7 +34,6 @@ $(() => { // jQuery document ready function
     var firstname = localStorage.getItem("firstname");
     var lastname = localStorage.getItem("lastname");
     var notifications = localStorage.getItem("notifications");
-    var password = localStorage.getItem("password");
     var plan = localStorage.getItem("plan");
     var postal = localStorage.getItem("postal");
     var product = localStorage.getItem("product");
@@ -87,7 +86,8 @@ $(() => { // jQuery document ready function
         localStorage.setItem("postal", $("#postal").val());
         localStorage.setItem("product", $("#product").val());
         localStorage.setItem("state", $("#state").val());
-        $("#profileForm :input").prop("disabled", true);
+        $("#profileForm :input").prop("disabled", true);    // Disable form after confirm button is clicked
+        $("#editbtn").prop("disabled", false);     // Re-enable edit button after whole form is disabled
     });
 
     // Notification area to change background colour if notification is not zero
@@ -98,7 +98,7 @@ $(() => { // jQuery document ready function
     }
 
     // For controlling notification changes including "new" and "read" status and updating 
-    $(document).on("click", ".notice", function() {     // Document selector used as the divisions were created with DOM commands and not from original HTML
+    $(document).on("click", ".new", function() {     // Document selector used as the divisions were created with DOM commands and not from original HTML
         $(this).removeClass("new");     // Remove class new
         $(this).find("i").remove();     // Remove icon new
         $(this).find(".noticeStatus").text("read");     // Change notification to read
@@ -108,8 +108,24 @@ $(() => { // jQuery document ready function
     });
 
     // For searching of products and rendering the relevant products on input change
-    $("#productSearch").on("input", ":text", function() {
-        
+    $("#productSearch").on("input", function() {
+        var userinput = $(this).val();      // Value entered by user
+        var matchstatus = "";               // Variable that tracks if there was any matches
+        $("#productContainer").empty();     // Remove previous search results from container to prepare for new append function
+
+        productlist.forEach(function(value) {       // For each array item, search for userinput, test and return boolean
+            var regex = new RegExp(userinput, 'gi');
+            var match = regex.test(value);
+
+            // If statement to filter according to user input and render products that match either in main cat, sub cat or keywords
+            if (match === true) {
+                matchstatus = "yes"
+                text = `<div class="product"><p>Product Category: <span class="productMaincat">${value[1]}</span></p><p>Product Sub-Category: <span class="productSubcat">${value[2]}</span></p>
+                <p>Product Keywords: <span class="productKeywords">${value[3]}</span></p></div>`;
+                $("#productContainer").append(text);      
+                console.log("match");        
+            }
+        });
     });
 
     //Function to access notification JSON file and render all notification messages that matches user ID
@@ -186,6 +202,7 @@ $(() => { // jQuery document ready function
     if (sessionStatus === 0) {
         $("#pleaseLogin").css("display", "block");
         $("#accountpage").css("display", "none");
+        $("#productWrapper").css("display", "none");
         $("#usernav").css("display", "none");
     }
 
